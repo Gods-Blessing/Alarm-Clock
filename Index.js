@@ -1,3 +1,31 @@
+var select = document.querySelectorAll('select');
+console.log(select);
+for(let i= 1; i <= 12; i++){
+    if(i < 10){
+        i = "0"+i;
+    }
+    let option = "<option value="+i+">"+i+"</option>";
+    select[0].firstElementChild.insertAdjacentHTML("beforebegin", option);
+}
+
+console.log(select[1]);
+for(let i = 0 ; i < 60; i++){
+    if(i < 10){
+        i = "0"+i;
+    }
+    let option = "<option value="+i+">"+i+"</option>";
+    select[1].firstElementChild.insertAdjacentHTML("beforebegin", option);
+}
+
+
+
+
+
+
+
+
+
+
 let hrs = document.getElementById('hr');
 let mins = document.getElementById('min');
 let secs = document.getElementById('sec');
