@@ -1,4 +1,8 @@
 var select = document.querySelectorAll('select');
+
+
+
+// ---------for inserting options -------------
 console.log(select);
 for(let i= 1; i <= 12; i++){
     if(i < 10){
@@ -17,6 +21,34 @@ for(let i = 0 ; i < 60; i++){
     select[1].firstElementChild.insertAdjacentHTML("beforebegin", option);
 }
 
+for(let i=0; i< 60; i++){
+    if(i <10){
+        i = "0" + i;
+    }
+    let option = "<option value="+i+">"+i+"</option>"
+
+    select[2].firstElementChild.insertAdjacentHTML("beforebegin", option)
+}
+
+
+
+
+// set alarm button functioning
+
+let setalarmbutton = document.getElementById('setalarm-btn');
+let alarmcontainer = document.getElementById('alarm-container');
+
+
+setalarmbutton.addEventListener('click', function(){
+    let div = document.createElement('div');
+    let test = document.createTextNode("hii help me");
+
+    div.id = document.getElementById('hours').value +":" + document.getElementById('minutes').value+":"+document.getElementById("seconds").value+":"+document.getElementById('ampm').value;
+
+    console.log(document.getElementById('hours').value +":" + document.getElementById('minutes').value+":"+document.getElementById("seconds").value+":"+document.getElementById('ampm').value);
+    div.appendChild(test)
+    alarmcontainer.appendChild(div);
+})
 
 
 
@@ -26,6 +58,8 @@ for(let i = 0 ; i < 60; i++){
 
 
 
+
+// --------alarm clock working---------------
 let hrs = document.getElementById('hr');
 let mins = document.getElementById('min');
 let secs = document.getElementById('sec');
