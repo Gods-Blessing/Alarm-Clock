@@ -10,7 +10,7 @@ body{
 
 #container{
     width: 50vw;
-    height: 70vh;
+    height: fit-content;
     border: 1px solid black;
     text-align: center;
     margin-top: 10vh;
@@ -19,7 +19,7 @@ body{
 
 /*---------------- clock div------------ */
 #clock{
-    height: 20%;
+    height: 4rem;
     width: 100%;
     border: 1px orange solid;
     display: flex;
@@ -28,7 +28,7 @@ body{
 }
 
 .time{
-    height: 50%;
+    height: 1.5em;
     width: 15%;
     font-size: 2em;
     border: 1px solid pink;
@@ -50,7 +50,7 @@ body{
 
 /* ----------------- alarm setting div--------------------- */
 #setting-div{
-    height: 10%;
+    height: 3em;
     width: 100%;
     border: 1px green solid;
 }
@@ -77,5 +77,8 @@ body{
 /* -----------------Alarm container -------------*/
 
 #alarm-container{
+    width: 100%;
+    height: fit-content;
     display: flex;
+    flex-direction: column;
 }
