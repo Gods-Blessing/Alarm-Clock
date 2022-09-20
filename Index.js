@@ -46,7 +46,8 @@ setalarmbutton.addEventListener('click', function(){
     // adding styling to div
     div.style.width = "100%";
     div.style.height = "2em";
-    div.style.border = "2px solid black";
+    div.style.borderBottom = "1px solid black";
+    div.style.borderTop = "1px solid black";
     div.style.display = "flex";
     div.style.justifyContent = "space-between";
     div.style.alignItems = "center";
@@ -70,8 +71,10 @@ setalarmbutton.addEventListener('click', function(){
     delbtn.style.width = "25%";
     delbtn.style.height = "70%";
     delbtn.style.border = "1px solid black";
+    delbtn.style.borderRadius = "10px";
     delbtn.innerText = "DELETE";
     delbtn.style.marginRight = "5%";
+    delbtn.style.cursor = "pointer";
     delbtn.setAttribute("class", div.id);
     
     // delete btn functioning
@@ -140,7 +143,7 @@ setInterval(function(){
 
 
 
-    // switch for dark mode for bright mode
+    // switch for dark mode & bright mode
     var ball = document.getElementById('ball');
     var tf = true;
     ball.addEventListener('click', function(){
@@ -148,10 +151,25 @@ setInterval(function(){
         if(tf == true){
             ball.style.marginLeft = "30px";
             tf = false;   
-            document.getElementsByTagName('body')
+            document.body.style.backgroundColor = "black";
+            document.getElementById('color').style.borderColor = "white";
+            document.getElementById('ball').style.backgroundColor = "white";
+            document.body.style.color = "white";
+            document.getElementById('container').style.borderColor = "white";
+            document.getElementById('clock').style.borderTopColor = "white";
+            document.getElementById('clock').style.borderBottomColor = "white";
+            document.getElementById('setting-div').style.borderBottomColor = "white";
         }else{
             ball.style.marginLeft = "0px";
             tf = true;
+            document.body.style.backgroundColor = "green";
+            document.body.style.color = "black";
+            document.getElementById('color').style.borderColor = "black";
+            document.getElementById('ball').style.backgroundColor = "black";
+            document.getElementById('container').style.borderColor = "black";
+            document.getElementById('clock').style.borderTopColor = "black";
+            document.getElementById('clock').style.borderBottomColor = "black";
+            document.getElementById('setting-div').style.borderBottomColor = "black";
         }
         
     })
