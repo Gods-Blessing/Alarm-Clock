@@ -5,7 +5,10 @@
     <link rel="stylesheet" href="./Index.css">
 </head>
 <body>
-    
+    <div id="color">
+        <div id="ball">
+        </div>
+    </div>
     <div id="container">
         <h1>Alarm Clock</h1>
         <div id="clock">
@@ -33,21 +36,21 @@
         <div id="setting-div">
             <div id="alarmset">
                 <!-- <input type="time"> -->
-                <select name="hours" id="hours">
+                <select name="hours" id="hours" required>
                     <option value=""></option>
                 </select>
 
                 <select name="minutes"
-                id="minutes">
+                id="minutes" required>
                 <option value=""></option>
                 </select>
 
                 <select name="seconds"
-                id="seconds">
+                id="seconds" required>
                 <option value=""></option>
                 </select>
 
-                <select name="ampm" id="ampmss">
+                <select name="ampm" id="ampmss" required>
                     <option value=""></option>
                     <option value="AM">AM</option>
                     <option value="PM">PM</option>

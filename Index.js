@@ -46,7 +46,7 @@ setalarmbutton.addEventListener('click', function(){
     // adding styling to div
     div.style.width = "100%";
     div.style.height = "2em";
-    div.style.border = "1px solid brown";
+    div.style.border = "2px solid black";
     div.style.display = "flex";
     div.style.justifyContent = "space-between";
     div.style.alignItems = "center";
@@ -58,7 +58,7 @@ setalarmbutton.addEventListener('click', function(){
     // creating p for div
     let p = document.createElement('p');
     p.style.marginLeft = "5%";
-    p.innerText = document.getElementById('hours').value +":" + document.getElementById('minutes').value+":"+document.getElementById("seconds").value+":"+document.getElementById('ampmss').value;
+    p.innerText = document.getElementById('hours').value +":" + document.getElementById('minutes').value+":"+document.getElementById("seconds").value+" "+document.getElementById('ampmss').value;
     p.setAttribute("class", "alarmtime")
      div.appendChild(p);
 
@@ -69,7 +69,7 @@ setalarmbutton.addEventListener('click', function(){
     var delbtn = document.createElement('div');
     delbtn.style.width = "25%";
     delbtn.style.height = "70%";
-    delbtn.style.border = "1px solid green";
+    delbtn.style.border = "1px solid black";
     delbtn.innerText = "DELETE";
     delbtn.style.marginRight = "5%";
     delbtn.setAttribute("class", div.id);
@@ -82,12 +82,6 @@ setalarmbutton.addEventListener('click', function(){
     div.appendChild(delbtn);
 
 })
-
-
-
-
-
-
 
 
 
@@ -131,8 +125,33 @@ setInterval(function(){
             secs.innerText = sec;
         }
         
-        // console.log(hr + ":" + min + ":" + sec + ":" + ampms.innerText)
         
+        // if the alarm matches the current time then the user is alreted 
+        for(let i = 0; i < document.getElementsByClassName("alarmtime").length; i++){
+            if(hr+":"+min+":"+sec+" "+ampms.innerText == document.getElementsByClassName("alarmtime")[i].innerText ){
+                window.alert(alert(hr+":"+min+":"+sec+" "+ ampms.innerText));
+                document.getElementsByClassName("alarmtime")[i].parentElement.remove();
+            }
+            
+        }
 
 
     }, 1000);
+
+
+
+    // switch for dark mode for bright mode
+    var ball = document.getElementById('ball');
+    var tf = true;
+    ball.addEventListener('click', function(){
+        
+        if(tf == true){
+            ball.style.marginLeft = "30px";
+            tf = false;   
+            document.getElementsByTagName('body')
+        }else{
+            ball.style.marginLeft = "0px";
+            tf = true;
+        }
+        
+    })

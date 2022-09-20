@@ -6,12 +6,13 @@
 body{
     display: flex;
     justify-content: center;
+    background-color: green;
 }
 
 #container{
     width: 50vw;
     height: fit-content;
-    border: 1px solid black;
+    border: 3px solid black;
     text-align: center;
     margin-top: 10vh;
 }
@@ -21,7 +22,9 @@ body{
 #clock{
     height: 4rem;
     width: 100%;
-    border: 1px orange solid;
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
+    /* border: 1px orange solid; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +34,8 @@ body{
     height: 1.5em;
     width: 15%;
     font-size: 2em;
-    border: 1px solid pink;
+    border: 1px solid black;
+    background-color: greenyellow;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,11 +52,12 @@ body{
 }
 
 
+
 /* ----------------- alarm setting div--------------------- */
 #setting-div{
     height: 3em;
     width: 100%;
-    border: 1px green solid;
+    border-bottom: 1px black solid;
 }
 
 #setting-div{
@@ -62,11 +67,15 @@ body{
 
 }
 
+
+
 #setalarm-btn{
     height: 80%;
     width: 30%;
-    border: 1px solid brown;
+    border: 1px solid black;
+    background-color: rgb(21, 201, 21);
     font-size: 1em;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,4 +90,27 @@ body{
     height: fit-content;
     display: flex;
     flex-direction: column;
+}
+
+
+
+/* switching the modes */
+#color{
+    position: relative;
+    height: 20px;
+    width: 50px;
+    border: 2px black solid;
+    margin-top: 2rem;
+    border-radius: 40px;
+}
+
+#ball{
+    position: absolute; 
+    height: 100%;
+    width: 20px;
+    background-color: black;
+    border-radius: 50%;
+}
+#ball:hover{
+    cursor: pointer;
 }
