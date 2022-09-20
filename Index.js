@@ -26,7 +26,6 @@ for(let i=0; i< 60; i++){
         i = "0" + i;
     }
     let option = "<option value="+i+">"+i+"</option>"
-
     select[2].firstElementChild.insertAdjacentHTML("beforebegin", option)
 }
 
@@ -37,6 +36,7 @@ for(let i=0; i< 60; i++){
 
 let setalarmbutton = document.getElementById('setalarm-btn');
 let alarmcontainer = document.getElementById('alarm-container');
+
 
 
 setalarmbutton.addEventListener('click', function(){
@@ -53,26 +53,34 @@ setalarmbutton.addEventListener('click', function(){
 
 
     // adding id to the divs
-    div.id = document.getElementById('hours').value +":" + document.getElementById('minutes').value+":"+document.getElementById("seconds").value+":"+document.getElementById('ampm').value;
+    div.id = document.getElementById('hours').value +":" + document.getElementById('minutes').value+":"+document.getElementById("seconds").value+":"+document.getElementById('ampmss').value;
 
     // creating p for div
     let p = document.createElement('p');
     p.style.marginLeft = "5%";
-    p.innerText = document.getElementById('hours').value +":" + document.getElementById('minutes').value+":"+document.getElementById("seconds").value+":"+document.getElementById('ampm').value;
+    p.innerText = document.getElementById('hours').value +":" + document.getElementById('minutes').value+":"+document.getElementById("seconds").value+":"+document.getElementById('ampmss').value;
+    p.setAttribute("class", "alarmtime")
      div.appendChild(p);
 
+    // div.appendChild(test)
+    alarmcontainer.appendChild(div);
+
     // adding delete button for divs
-    let delbtn = document.createElement('div');
+    var delbtn = document.createElement('div');
     delbtn.style.width = "25%";
     delbtn.style.height = "70%";
     delbtn.style.border = "1px solid green";
     delbtn.innerText = "DELETE";
     delbtn.style.marginRight = "5%";
-
+    delbtn.setAttribute("class", div.id);
+    
+    // delete btn functioning
+    delbtn.addEventListener('click', function(){
+    console.log(this.getAttribute("class"));
+    this.parentElement.remove();
+})
     div.appendChild(delbtn);
 
-    // div.appendChild(test)
-    alarmcontainer.appendChild(div);
 })
 
 
@@ -103,21 +111,28 @@ setInterval(function(){
         }
 
         if(hr < 10){
-            hrs.innerText = "0"+ hr 
+            hrs.innerText = "0"+ hr;
+            hr = hrs.innerText; 
         }else{
             hrs.innerText = hr;
         }
 
         if(min < 10){
-            mins.innerText = "0"+ min 
+            mins.innerText = "0"+ min;
+            min = mins.innerText; 
         }else{
             mins.innerText = min;
         }
         
         if(sec < 10){
-            secs.innerText = "0"+ sec
+            secs.innerText = "0"+ sec;
+            sec = secs.innerText;
         }else{
             secs.innerText = sec;
         }
-  
+        
+        // console.log(hr + ":" + min + ":" + sec + ":" + ampms.innerText)
+        
+
+
     }, 1000);
